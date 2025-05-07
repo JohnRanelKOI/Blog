@@ -1,0 +1,226 @@
+/* BLOG CSS */
+main > .blog > .container {
+    text-align: center;
+}
+
+main > .blog > .container:before {
+    position: absolute;
+    height: 430px;
+    margin-top: 15px;
+    width: 100%;
+    left: 0;
+    content: "";
+    background-color: #F5EEE6;
+    z-index: 0;
+}
+
+main > .blog > .container > h2 {
+    font-family: "Instrument-Sans";
+    font-weight: 100;
+    margin-bottom: 40px;
+    padding: 0 85px;
+    position: relative;
+}
+
+main > .blog > .container > p {
+    font-family: "Oleo-Script";
+    font-size: 34px;
+    margin-top: 40px;
+    padding: 0;
+    position: relative;
+}
+
+main > .blog > .container > input {
+    height: 25px;
+    width: 70%;
+    font-size: 24px;
+    padding: 20px;
+    font-family: "Instrument-Sans";
+    position: relative;
+}
+
+main > .blog > .container > .blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 50px;
+}
+
+main > .blog > .container > .blog-posts > article {
+    width: 50%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+main > .blog > .container > .blog-posts > article > a > figure {
+    margin: 5px;
+    position: relative;
+}
+
+main > .blog > .container > .blog-posts > article > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+main > .blog > .container > .blog-posts > article > a > figure > img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    filter: brightness(100%);
+    transition: all 0.5s ease-out;
+}
+
+main > .blog > .container > .blog-posts > article > a > figure:hover > img {
+    filter: brightness(70%);
+}
+
+main > .blog > .container > .blog-posts > article > a > figure > figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+main > .blog > .container > .blog-posts > article > a > h3 {
+    font-family: "Instrument-Sans";
+    font-weight: 600;
+    font-size: 20px;
+    margin: 20px 0 10px;
+}
+
+main > .blog > .container > .blog-posts > article > a > p {
+    font-family: "Instrument-Sans";
+}
+
+main > .blog > .container > .filters {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+main > .blog > .container > .filters > button {
+    font-family: "Instrument-Sans";
+    padding: 15px 50px;
+    border-radius: 10px;
+    border: 0;
+}
+
+main > .blog > .container > .filters > button:nth-child(1) {
+    background-color: #ea921e;
+}
+
+main > .blog > .container > .filters > button:nth-child(2) {
+    background-color: #e0e78e;
+}
+
+main > .blog > .container > .filters > button:nth-child(3) {
+    background-color: #807c4c;
+}
+
+main > .blog > .container > .filters > button:nth-child(4) {
+    background-color: #d2dcfc;
+}
+
+main > .blog > .container > .filters > button:nth-child(5) {
+    background-color: #f68c9d;
+}
+
+main > .blog > .container > .blog-posts > article > a > figure > .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+main > .blog > .container > .blog-posts > article > a > figure > .overlay::after {
+    content: "\27F6";
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    font-size: 30px;
+    position: relative;
+    top: -5px;
+    padding-left: 5px;
+}
+
+main > .blog > .container > .blog-posts > article > a > figure > .overlay > span {
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    transition: all 0.5s ease-out;
+}
+/* END BLOG CSS */
+
+/* 40rem */
+@media screen and (min-width: 640px) {
+    main > .blog > .container:before {
+        height: 320px;
+    }
+}
+
+/* 48rem */
+@media screen and (min-width: 768px) {
+    main > .blog > .container > .blog-posts {
+        padding: 30px;
+    }
+}
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    /* BLOG CSS */
+    main > .blog > .container:before {
+        height: 280px;
+    }
+
+    main > .blog > .container > p {
+        font-size: 44px;
+        padding: 0 85px;
+    }
+
+    main > .blog > .container > .blog-posts {
+        padding: 50px;
+        margin-top: 100px;
+    }
+
+    main > .blog > .container > .blog-posts > article {
+        width: 25%;
+    }
+    /* END BLOG CSS */
+}
+
+/* 80 rem */
+@media screen and (min-width: 1280px) {
+    /* BLOG CSS */
+    main > .blog > .container > .blog-posts {
+        padding: 0;
+    }
+
+    main > .blog > .container > .blog-posts > article {
+        width: 33.33%;
+    }
+
+    main > .blog > .container > .blog-posts > article > a > figure {
+        margin: 20px;
+    }
+
+    main > .blog > .container > .blog-posts > article > a > figure > img {
+        height: 350px;
+    }
+
+    main > .blog > .container > .blog-posts > article > a > h3 {
+        margin: 20px 20px;
+    }
+    
+    main > .blog > .container > .blog-posts > article > a > p {
+        margin: 20px 20px;
+    }
+    /* END BLOG CSS */
+}

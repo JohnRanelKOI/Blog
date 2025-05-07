@@ -1,0 +1,215 @@
+/* TRAVEL CSS */
+main > .travel > .container {
+    text-align: center;
+}
+
+main > .travel > .container:before {
+    position: absolute;
+    height: 430px;
+    margin-top: 15px;
+    width: 100%;
+    left: 0;
+    content: "";
+    background-color: #F5EEE6;
+    z-index: 0;
+}
+
+main > .travel > .container > h2 {
+    font-family: "Instrument-Sans";
+    font-weight: 100;
+    margin-bottom: 40px;
+    padding: 0 85px;
+    position: relative;
+}
+
+main > .travel > .container > p {
+    font-family: "Oleo-Script";
+    font-size: 34px;
+    margin-top: 40px;
+    padding: 0;
+    position: relative;
+}
+
+main > .travel > .container > .filters {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+main > .travel > .container > .filters > button {
+    font-family: "Instrument-Sans";
+    padding: 15px 50px;
+    border-radius: 10px;
+    border: 0;
+}
+
+main > .travel > .container > .filters > button:nth-child(1) {
+    background-color: #ea921e;
+}
+
+main > .travel > .container > .filters > button:nth-child(2) {
+    background-color: #e0e78e;
+}
+
+main > .travel > .container > .filters > button:nth-child(3) {
+    background-color: #807c4c;
+}
+
+main > .travel > .container > .filters > button:nth-child(4) {
+    background-color: #d2dcfc;
+}
+
+main > .travel > .container > .filters > button:nth-child(5) {
+    background-color: #f68c9d;
+}
+
+main > .travel > .container > input {
+    height: 25px;
+    width: 70%;
+    font-size: 24px;
+    padding: 20px;
+    font-family: "Instrument-Sans";
+    position: relative;
+}
+
+main > .travel > .container > .travel-posts {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 50px;
+}
+
+main > .travel > .container > .travel-posts > article {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+main > .travel > .container > .travel-posts > article > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+main > .travel > .container > .travel-posts > article > a > figure {
+    position: relative;
+    margin: 5px;
+}
+
+main > .travel > .container > .travel-posts > article > a > figure > img {
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+    filter: brightness(100%);
+    transition: all 0.5s ease-out;
+}
+
+main > .travel > .container > .travel-posts > article > a > figure > figcaption {
+    font-family: "Instrument-Sans";
+    font-weight: 600;
+    font-size: 20px;
+    margin: 10px 0 10px;
+    text-align: center;
+}
+
+main > .travel > .container > .travel-posts > article > a > figure > .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+main > .travel > .container > .travel-posts > article > a > figure > .overlay::after {
+    content: "\27F6";
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    font-size: 30px;
+    position: relative;
+    top: -5px;
+    padding-left: 5px;
+}
+
+main > .travel > .container > .travel-posts > article > a > figure > .overlay > span {
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    transition: all 0.5s ease-out;
+}
+/* END TRAVEL CSS */
+
+/* 40rem */
+@media screen and (min-width: 640px) {
+    main > .travel > .container:before {
+        height: 320px;
+    }
+
+    main > .travel > .container > .travel-posts > article > a > figure > img {
+        height: 250px;
+    }
+}
+
+/* 48rem */
+@media screen and (min-width: 768px) {
+    main > .travel > .container > .travel-posts {
+        padding: 30px;
+    }
+
+    main > .travel > .container > .travel-posts > article > a > figure > img {
+        height: 300px;
+    }
+}
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    /* TRAVEL CSS */
+    main > .travel > .container:before {
+        height: 280px;
+    }
+
+    main > .travel > .container > p {
+        font-size: 44px;
+        padding: 0 85px;
+    }
+
+    main > .travel > .container > .travel-posts {
+        padding: 50px;
+        margin-top: 100px;
+    }
+
+    main > .travel > .container > .travel-posts > article {
+        width: 33.33%;
+    }
+
+    main > .travel > .container > .travel-posts > article > a > figure {
+        margin: 20px;
+    }
+
+    main > .travel > .container > .travel-posts > article > a > figure > figcaption {
+        position: relative;
+        z-index: 2;
+        background-color: #ffffff;
+        transition: margin ease-in .3s;
+        margin: -28px 0 0px;
+        height: 50px;
+    }
+    /* END TRAVEL CSS */
+}
+
+/* 80 rem */
+@media screen and (min-width: 1280px) {
+    /* TRAVEL CSS */
+    main > .travel > .container > .travel-posts {
+        padding: 0;
+    }
+
+    main > .travel > .container > .travel-posts > article > a > figure > img {
+        height: 350px;
+    }
+    /* END TRAVEL CSS */
+}

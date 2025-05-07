@@ -1,0 +1,684 @@
+/* LANDING BANNER CSS */
+main > .landing-banner {
+    display: block;
+    align-items: center;
+}
+
+main > .landing-banner > .banner-picture {
+    background-color: #F5EEE6;
+    height: 555px;
+    flex: 1;
+    text-align: center;
+}
+
+main > .landing-banner > .banner-picture > img {
+    margin: 28px 0;
+}
+
+main > .landing-banner > .banner-content {
+    background-color: #F5EEE6;
+    height: 505px;
+    flex: 1;
+}
+
+main > .landing-banner > .banner-content > .message {
+    margin: 0 20px;
+    width: auto;
+}
+
+main > .landing-banner > .banner-content > .message > h1 {
+    font-family: "Oleo-Script";
+    font-size: 40px;
+    width: auto;
+    margin: 0;
+    line-height: auto;
+}
+
+main > .landing-banner > .banner-content > .message > p {
+    font-family: "Inter";
+    font-size: 20px;
+    line-height: 36px;
+}
+/* END LANDING PAGE BANNER CSS */
+
+/* TRAVEL CSS */
+main > .travel {
+    padding-top: 65px;
+}
+
+main > .travel > h2 {
+    font-family: "Oleo-Script";
+    font-size: 76px;
+    line-height: 0;
+    position: relative;
+    margin: 0 0 0 20px;
+    z-index: 2;
+}
+
+main > .travel > .travel-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "image1 image2"
+        "image3 image4"
+        "image5 image6"
+        "viewmore viewmore";
+    grid-gap: 12px;
+}
+
+main > .travel > .travel-images > article {
+    height: 220px;
+    overflow: hidden;
+}
+
+main > .travel > .travel-images > article > a {
+    text-decoration: none;
+}
+
+main > .travel > .travel-images > article > a > figure > img {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    z-index: 1;
+    filter: brightness(100%);
+    transition: all 0.5s ease-out;
+}
+
+main > .travel > .travel-images > article:hover > a > figure > img {
+    transform: scale(1.1);
+    filter: brightness(60%);
+}
+
+main > .travel > .travel-images > article > a > figure {
+    margin: 0;
+}
+
+main > .travel > .travel-images > article > a > figure > figcaption {
+    position: relative;
+    z-index: 2;
+    margin: -140px auto;
+    padding: 5px;
+    text-align: center;
+    width: 80%;
+    font-family: "Oleo-Script";
+    font-size: 32px;
+    color: #fff;
+}
+
+main > .travel > .travel-images > article:nth-child(1) {
+    grid-area: image1;
+}
+
+main > .travel > .travel-images > article:nth-child(2) {
+    grid-area: image2;
+}
+
+main > .travel > .travel-images > article:nth-child(3) {
+    grid-area: image3;
+}
+
+main > .travel > .travel-images > article:nth-child(4) {
+    grid-area: image4;
+}
+
+main > .travel > .travel-images > article:nth-child(5) {
+    grid-area: image5;
+}
+
+main > .travel > .travel-images > article:nth-child(6) {
+    grid-area: image6;
+}
+
+main > .travel > .travel-images > a {
+    grid-area: viewmore;
+    text-align: center;
+}
+
+main > .travel > .travel-images > a {
+    font-family: "Instrument-Sans";
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #605C5C;
+}
+
+main > .travel > .travel-images > a > img {
+    width: 50px;
+    margin-left: 10px;
+    transition: all 0.5s ease-out;
+}
+/* END TRAVEL CSS */
+
+/* BLOG CSS */
+main > .blog {
+    text-align: center;
+}
+
+main > .blog > h2 {
+    font-family: "Instrument-Sans";
+    font-weight: 100;
+    margin-bottom: 40px;
+}
+
+main > .blog > p {
+    font-family: "Oleo-Script";
+    font-size: 44px;
+    margin-top: 40px;
+}
+
+main > .blog > .container {
+    margin-bottom: 0;
+}
+
+main > .blog > .container > .blog-posts {
+    width: auto;
+    margin: 0 auto;
+}
+
+main > .blog > .container > .blog-posts > .blog-item {
+    width: 47%;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > figure {
+    position: relative;
+    margin: 0;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > figure > figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > figure > img {
+    width: 100%;
+    filter: brightness(100%);
+    transition: all 0.5s ease-out;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > figure > .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > figure > .overlay::after {
+    content: "\27F6";
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    font-size: 30px;
+    position: relative;
+    top: -5px;
+    padding-left: 5px;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > figure > .overlay > span {
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    transition: all 0.5s ease-out;
+}
+
+main > .blog > .container > .blog-posts > .blog-item:nth-child(2) {
+    margin-left: 10px;
+}
+
+main > .blog > .container > .blog-posts > .blog-item:nth-child(3) {
+    margin-right: 10px;
+}
+
+main > .blog > .container > .blog-posts > .blog-item:nth-child(4) {
+    margin-top: -75px;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > h3 {
+    font-family: "Instrument-Sans";
+    font-weight: 600;
+    font-size: 20px;
+    margin: 15px 0 10px 0;
+}
+
+main > .blog > .container > .blog-posts > .blog-item > a > p {
+    font-family: "Instrument-Sans";
+    margin: 10px 0 15px 0;
+}
+
+main > .blog > .container > .blog-posts > a {
+    font-family: "Instrument-Sans";
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #605C5C;
+    padding-top: 25px;
+}
+
+main > .blog > .container > .blog-posts > a > img {
+    width: 50px;
+    margin-left: 10px;
+    transition: all 0.5s ease-out;
+}
+/* END BLOG CSS */
+
+/* OOTD CSS */
+main > .ootd > h2 {
+    font-family: "Oleo-Script";
+    font-size: 96px;
+    position: absolute;
+    z-index: 3;
+    margin: 20px 0 0 40px;
+}
+
+main > .ootd > .container > .ootd-container {
+    margin: 0 auto;
+}
+
+main > .ootd > .container > .ootd-container > figure {
+    display: inline-block;
+    margin: 0;
+}
+
+main > .ootd > .container > .ootd-container > figure > img {
+    filter: brightness(100%);
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+main > .ootd > .container > .ootd-container > figure:nth-child(1) > img, 
+main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+    height: 250px;
+    position: relative;
+    z-index: 1;
+}
+
+main > .ootd > .container > .ootd-container > figure:nth-child(2) > img, 
+main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+    height: 200px;
+    border: 20px solid #ffffff;
+    z-index: 2;
+}
+
+main > .ootd > .container > .ootd-container > figure:nth-child(2) > img {
+    margin-top: 100px;
+    margin-left: -65px;
+    position: relative;
+}
+
+main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+    position: relative;
+    margin-top: 0px;
+    margin-right: 0;
+    margin-left: 0px;
+    z-index: 2;
+}
+
+main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+    position: relative;
+    margin-left: -61px;
+    margin-top: 0;
+    float: right;
+    z-index: 1;
+}
+
+main > .ootd > .container > .ootd-container > figure > figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+main > .ootd > .container > a {
+    font-family: "Instrument-Sans";
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #605C5C;
+    padding-top: 25px;
+}
+
+main > .ootd > .container > a > img {
+    width: 50px;
+    margin-left: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.image-preview {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 999;
+}
+
+.image-preview > .container {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.image-preview > .container > img {
+    align-self: center;
+}
+
+.image-preview > .container > button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    align-self: flex-end;
+    position: absolute;
+    top: 20px;
+}
+
+.image-preview > .container > button > img {
+    height: 20px;
+}
+/* END OOTD CSS */
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* 40rem */
+@media screen and (min-width: 640px) {
+    /* LANDING PAGE BANNER CSS */
+    main > .landing-banner > .banner-picture {
+        text-align: right;
+    }
+
+    main > .landing-banner > .banner-picture > img {
+        margin: 28px 70px;
+    }
+
+    main > .landing-banner > .banner-content {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    main > .landing-banner > .banner-content > .message {
+        margin: 0 70px;
+        width: 500px;
+    }
+
+    main > .landing-banner > .banner-content > .message > h1 {
+        width: 400px;
+    }
+    /* END LANDING PAGE BANNER CSS */
+
+    /* TRAVEL CSS */
+    main > .travel > h2 {
+        margin: 0 0 0 40px;
+    }
+
+    main > .travel > .travel-images > article {
+        height: 260px;
+    }
+
+    main > .travel > .travel-images > article > a > figure > img {
+        height: 260px;
+    }
+
+    main > .travel > .travel-images > article > a > figure > figcaption {
+        margin: -160px auto;
+        font-size: 40px;
+    }
+    /* END TRAVEL CSS */
+
+    /* BLOG CSS */
+    main > .blog > .container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    main > .blog > .container > .blog-posts > .blog-item {
+        width: 48%;
+    }
+
+    main > .blog > .container > .blog-posts > .blog-item:nth-child(4) {
+        margin-top: -115px;
+    }
+    /* END BLOG CSS */
+
+    /* OOTD CSS */
+    main > .ootd > h2 {
+        position: relative;
+        margin: 0 25px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(1) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+        height: 350px;
+        margin-left: 0;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(2) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        height: 300px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(2) > img {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        margin-left: 15px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+        margin-left: 0;
+    }
+    /* END OOTD CSS */
+}
+
+/* 48rem */
+@media screen and (min-width: 768px) {
+    /* TRAVEL CSS */
+    main > .travel > h2 {
+        margin: 0 0 0 100px;
+    }
+
+    main > .travel > .travel-images {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "image1 image1 image2 image3"
+            "image4 image5 image6 image6"
+            "viewmore viewmore viewmore viewmore";
+    }
+    /* END TRAVEL CSS */
+
+    /* BLOG CSS */
+    main > .blog > .container > .blog-posts > .blog-item {
+        width: 49%;
+    }
+
+    main > .blog > .container > .blog-posts > .blog-item:nth-child(4) {
+        margin-top: -160px;
+    }
+    /* END BLOG CSS */
+
+    /* OOTD CSS */
+    main > .ootd > h2 {
+        margin: 0 65px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(1) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+        height: 390px;
+        margin-left: 65px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(2) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        height: 350px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        margin-left: 60px;
+    }
+    /* END OOTD CSS */
+}
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    /* LANDING PAGE BANNER CSS */
+    main > .landing-banner {
+        display: flex;
+    }
+
+    main > .landing-banner > .banner-content {
+        height: 505px;
+    }
+
+    main > .landing-banner > .banner-content > .message {
+        margin: 70px 70px;
+        width: 400px;
+    }
+    /* END LANDING PAGE BANNER CSS */
+
+    /* TRAVEL CSS */
+    main > .travel > h2 {
+        font-size: 96px;
+        margin: 0 0 0 150px;
+    }
+
+    main > .travel > .travel-images > article {
+        height: 360px;
+    }
+
+    main > .travel > .travel-images > article > a > figure > img {
+        height: 360px;
+    }
+
+    main > .travel > .travel-images > article > a >figure > figcaption {
+        margin: -220px auto;
+        font-size: 50px;
+    }
+    /* END TRAVEL CSS */
+
+
+    /* BLOG CSS */
+    main > .blog > p {
+        font-size: 64px;
+    }
+
+    main > .blog > .container > .blog-posts {
+        width: 880px;
+    }
+    /* END BLOG CSS */
+
+    /* OOTD CSS */
+    main > .ootd > h2 {
+        font-family: "Oleo-Script";
+        font-size: 96px;
+        position: absolute;
+        z-index: 3;
+        margin: 20px 0  0 27%;
+    }
+
+    main > .ootd > .container > .ootd-container {
+        display: flex;
+    }
+
+    main > .ootd > .container > .ootd-container > figure {
+        display: block;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(1) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+        margin-left: 20px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(2) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        height: 340px;
+        position: absolute;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(2) > img {
+        margin-top: 100px;
+        margin-left: -80px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        margin-top: -80px;
+        margin-left: 195px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+        position: absolute;
+        margin-left: 365px;
+        margin-top: 50px;
+    }
+    /* END OOTD CSS */
+}
+
+/* 80 rem */
+@media screen and (min-width: 1280px) {
+    /* LANDING PAGE BANNER CSS */
+    main > .landing-banner > .banner-content > .message {
+        margin: 100px 70px;
+        width: 500px;
+    }
+    /* END LANDING PAGE BANNER CSS */
+
+    /* BLOG CSS */
+    main > .blog > input {
+        height: 25px;
+        width: 55%;
+        font-size: 24px;
+        padding: 20px;
+        font-family: "Instrument-Sans";
+    }
+    /* END BLOG CSS */
+
+    /* OOTD CSS */
+    main > .ootd > h2 {
+        position: absolute;
+        margin: 40px 0  0 490px;
+    }
+
+    main > .ootd > .container > .ootd-container {
+        padding: 0;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(1) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+        height: 550px;
+        margin-left: 0;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(2) > img, 
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        height: 390px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(2) > img {
+        margin-left: -90px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(3) > img {
+        margin-left: 225px;
+    }
+
+    main > .ootd > .container > .ootd-container > figure:nth-child(4) > img {
+        margin-left: 405px;
+    }
+    /* END OOTD CSS */
+}

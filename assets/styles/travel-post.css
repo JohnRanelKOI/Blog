@@ -1,0 +1,195 @@
+main > .travel-post {
+    height: auto;
+    background-color: #F5EEE6;
+    padding: 10px;
+}
+
+main > .travel-post > .container > article {
+    display: flex;
+    flex-wrap: unset;
+    flex-direction: column-reverse;
+}
+
+main > .travel-post > .container > article > .images {
+    width: 100%;
+    box-sizing: unset;
+}
+
+main > .travel-post > .container > article > .stay-at-details {
+    width: 100%;
+    box-sizing: unset;
+    text-align: center;
+}
+
+main > .travel-post > .container > article > .stay-at-details > h2 {
+    font-family: "Oleo-Script";
+    font-size: 96px;
+    margin: 0;
+}
+
+main > .travel-post > .container > article > .stay-at-details > h3 {
+    position: relative;
+    z-index: 2;
+    font-family: "Oleo-Script";
+    font-size: 36px;
+    background-color: #000000;
+    color: #ffffff;
+    width: 160px;
+    margin: 0 auto;
+}
+
+main > .travel-post > .container > article > .stay-at-details > ul {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+    font-family: "Inter";
+    font-weight: 100;
+    line-height: 30px;
+    margin: -25px auto 0;
+    padding: 70px;
+    width: auto;
+    text-align: left;
+}
+
+main > .travel-post > .container > article > .places-to-go-details {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+main > .travel-post > .container > article > .images > figure {
+    display: block;
+    float: none;
+    margin: 20px;
+    width: calc(50% - 40px);
+}
+
+main > .travel-post > .container > article > .images > figure > img {
+    position: relative;
+    width: 255px;
+}
+
+main > .travel-post > .container > article > .images > figure > img {
+    border-left: 20px solid #ffffff;
+    border-bottom: 20px solid #ffffff;
+}
+
+main > .travel-post > .container > article > .images > figure > figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+main > .travel-post > .container > article > .images > figure:nth-child(1) > img {
+    z-index: 2;
+    margin: 0;
+}
+
+main > .travel-post > .container > article > .images > figure:nth-child(2) > img {
+    z-index: 1;
+    margin: 0;
+    border-left: 0;
+    border-right: 20px solid #ffffff;
+}
+
+main > .travel-post > .container > article > .images > figure:nth-child(3) > img {
+    z-index: 3;
+    margin: 0;
+}
+
+/* 40rem */
+@media screen and (min-width: 640px) {
+    main > .travel-post {
+        height: 490px;
+    }
+    
+    main > .travel-post > .container > article {
+        flex-wrap: wrap;
+        flex-direction: unset;
+    }
+    
+    main > .travel-post > .container > article > .images {
+        width: 50%;
+        box-sizing: border-box;
+    }
+    
+    main > .travel-post > .container > article > .stay-at-details {
+        width: 50%;
+        box-sizing: border-box;
+    }
+    
+    main > .travel-post > .container > article > .stay-at-details > h2 {
+        font-size: 66px;
+    }
+    
+    main > .travel-post > .container > article > .stay-at-details > ul {
+        padding: 50px;
+        width: 60%;
+    }
+    
+    main > .travel-post > .container > article > .images > figure {
+        display: inline-block;
+        float: left;
+    }
+    
+    main > .travel-post > .container > article > .images > figure > img {
+        position: absolute;
+        width: 200px;
+    }
+    
+    main > .travel-post > .container > article > .images > figure:nth-child(1) > img {
+        margin: 130px 0 0 -50px;
+    }
+    
+    main > .travel-post > .container > article > .images > figure:nth-child(2) > img {
+        margin: -40px 0 0 -120px;
+    }
+    
+    main > .travel-post > .container > article > .images > figure:nth-child(3) > img {
+        margin: 250px 0 0 25px;
+    }
+}
+
+/* 48rem */
+@media screen and (min-width: 768px) {
+    main > .travel-post {
+        height: 390px;
+    }
+    
+    main > .travel-post > .container > article > .images > figure:nth-child(1) > img {
+        margin: 20px 0 0;
+    }
+    
+    main > .travel-post > .container > article > .images > figure:nth-child(2) > img {
+        margin: -60px 0 0 -50px;
+    }
+    
+    main > .travel-post > .container > article > .images > figure:nth-child(3) > img {
+        margin: 150px 0 0 140px;
+    }
+}
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    main > .travel-post {
+        height: 475px;
+    }
+    
+    main > .travel-post > .container > article > .stay-at-details > h2 {
+        font-size: 96px;
+    }
+    
+    main > .travel-post > .container > article > .stay-at-details > ul {
+        padding: 70px;
+        width: 315px;
+    }
+    
+    main > .travel-post > .container > article > .images > figure > img {
+        width: 250px;
+    }
+    
+    main > .travel-post > .container > article > .images > figure:nth-child(3) > img {
+        margin: 200px 0 0 200px;
+    }
+}

@@ -1,0 +1,483 @@
+@font-face {
+    font-family: "Inter";
+    src: url(./../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: "Oleo-Script";
+    src: url(./../fonts/Oleo_Script/OleoScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Instrument-Sans";
+    src: url(./../fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth\,wght.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Mobile navbar */
+.navbar {
+    height: 75px;
+    background: white;
+    display: block;
+    margin: auto 0;
+}
+
+.burger {
+    padding: 25px 15px;
+}
+
+[class^="line-"] {
+    display: block;
+    height: 5px;
+    width: 40px;
+    background-color: #000000;
+    border-radius: 2px;
+}
+
+.line-1 {
+    margin-bottom: 5px;
+}
+.line-2 {
+    margin-bottom: 5px;
+}
+
+
+[class^="icon-"] {
+    margin: 0 auto;
+    display: block;
+}
+
+.burger-open {
+    .line-1 {
+        animation: burger-line1-open .2s forwards ease-in;
+    }
+    .line-2 {
+        animation: burger-line2-open .2s forwards ease-in;
+    }
+    .line-3 {
+        animation: burger-line3-open .2s forwards ease-in;
+    }
+}
+
+@keyframes burger-line1-open {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(10px) rotate(45deg);
+    }
+}
+
+@keyframes burger-line2-open {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes burger-line3-open {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
+
+nav {
+    border-bottom: 1px solid #000000;
+}
+
+nav > .container {
+    height: 150px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+nav > .container > .menu-container {
+    transform: translateX(100%);
+    transition: transform ease-out 0.6s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #F5EEE6;
+    height: 100%;
+    z-index: 3;
+    padding: 20px;
+    text-align: center;
+}
+
+nav > .container > .menu-container.is-open {
+    transform: translateX(0%);
+}
+
+nav > .container > .menu-container > a {
+    font-family: "Oleo-Script";
+    font-size: 30px;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 20px;
+    transition: all ease-in 0.1s;
+}
+
+nav > .container > .menu-container > a:not(.active):hover {
+    color: #c39078;
+    font-weight: 600;
+}
+
+nav > .container > .menu-container > a.active:hover {
+    font-weight: 600;
+}
+
+nav > .container > .menu-container > a.active {
+   text-decoration: underline;
+   text-underline-offset: 10px;
+}
+
+nav > .container > .menu-container > .close-menu {
+    position: relative;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    margin-bottom: 20px;
+}
+
+nav > .container > .menu-container > .close-menu > img {
+    height: 32px ;
+}
+
+nav > .container > .logo-container > a > img {
+    height: 150px;
+}
+
+nav > .container > .menu-container > a:not(:last-of-type) {
+    margin-right: 40px;
+}
+
+nav > .container > .menu-container > .social-icons-container {
+    display: inline-block;
+    margin-left: 0px;
+}
+
+nav > .container > .menu-container > .social-icons-container > a > img {
+    height: 20px;
+    margin-right: 20px;
+}
+
+nav > .container > .menu-container > a:not(:last-of-type) {
+    margin-right: 0;
+}
+/* END MOBILE NAV BAR */
+
+/* MAIN */
+main {
+    grid-area: main;
+    display: grid;
+}
+
+main > section {
+    margin-top: 50px;
+}
+
+main > section:last-child {
+    margin-bottom: 50px;
+}
+/* END MAIN */
+
+/* FOOTER CSS */
+footer {
+    background-color: #000000;
+}
+
+footer > .container > .footer-container {
+    grid-area: footer;
+    height: 470px;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+     "footer-logo-container"
+     "footer-menu-container"
+     "footer-divider-container"
+     "footer-socials-container"
+     "footer-copyright-container";
+    align-items: center;
+}
+
+footer > .container > .footer-container > .logo-container {
+    grid-area: footer-logo-container;
+    text-align: center;
+}
+
+footer > .container > .footer-container > .menu-container {
+    grid-area: footer-menu-container;
+}
+
+footer > .container > .footer-container > .menu-container > a {
+    font-family: "Oleo-Script";
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all ease-in 0.1s;
+}
+
+footer > .container > .footer-container > .menu-container > a.active {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+footer > .container > .footer-container > .menu-container > a:not(.active):hover {
+    color: #c39078;
+}
+
+footer > .container > .footer-container > .menu-container > a:not(:last-of-type) {
+    margin-right: 40px
+}
+
+footer > .container > .footer-container > hr {
+    grid-area: footer-divider-container;
+    height: 0px;
+    width: 100%;
+    border: 1px solid #ffffff;
+}
+
+footer > .container > .footer-container > .socials-container {
+    grid-area: footer-socials-container;
+    text-align:  center;
+    color: #ffffff;
+}
+
+footer > .container > .footer-container > .socials-container > a > img {
+    height: 20px;
+    margin-right: 20px;
+}
+
+footer > .container > .footer-container > .copyright-container {
+    grid-area: footer-copyright-container;
+    text-align:  center;
+    font-family: "Inter";
+    color: #ffffff;
+}
+
+footer > .container > .footer-container > .copyright-container > a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Inter";
+}
+
+footer > .container > .footer-container > .copyright-container > a:not(:last-of-type) {
+    margin-right: 25px;
+}
+
+footer > .container > .footer-container > .logo-container > a > img {
+    height: 100px;
+}
+/* END FOOTER CSS */
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* 40rem */
+@media screen and (min-width: 640px) {
+    .container {
+        width: 576px;
+    }
+
+    /* Mobile navbar */
+    nav > .container > .menu-container > a:not(:last-of-type) {
+        margin-right: 0;
+    }
+    /* END MOBILE NAV BAR */
+
+
+    /* FOOTER CSS */
+    footer > .container > .footer-container {
+        grid-template-columns: 40% 60%;
+        grid-template-areas: 
+         "footer-logo-container footer-menu-container"
+         "footer-divider-container footer-divider-container"
+         "footer-socials-container footer-socials-container"
+         "footer-copyright-container footer-copyright-container";
+    }
+    /* END FOOTER CSS */
+}
+
+/* 48rem */
+@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+    }
+
+    /* FOOTER CSS */
+    footer > .container > .footer-container {
+        grid-template-columns: 30% 70%;
+    }
+    /* END FOOTER CSS */
+}
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 1024px;
+    }
+
+    /* LAYOUT CSS */
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "nav"
+            "main"
+            "footer";
+    }
+
+    /* MOBILE NAV BAR */
+    .navbar {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        display: none;
+    }
+    /* END MOBILE NAV BAR */
+    
+    /* NAVIGATION CSS */
+    nav {
+        border-bottom: 1px solid #000000;
+        grid-area: nav;
+    }
+    
+    nav > .container {
+        height: 100px;
+    }
+    
+    nav > .container > .logo-container {
+        padding-left: 40px;
+        margin: auto 0;
+    }
+    
+    nav > .container > .logo-container > a > img {
+        height: 100px;
+    }
+    
+    nav > .container > .menu-container {
+        transform: translateX(0%);
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left: auto;
+        width: auto;
+        height: auto;
+        padding: 0px;
+        padding-right: 40px;
+        text-align: right;
+        margin: auto 0;
+        background-color: transparent;
+        visibility: visible;
+    }
+
+    nav > .container > .menu-container > .close-menu {
+        display: none;
+    }
+    
+    nav > .container > .menu-container > a {
+        font-family: "Inter";
+        font-size: 18px;
+        text-decoration: none;
+        color: #000000;
+        margin-bottom: 0;
+    }
+    
+    nav > .container > .menu-container > a:not(:last-of-type) {
+        margin-right: 40px
+    }
+    
+    nav > .container > .menu-container > .social-icons-container {
+        margin-left: 50px;
+    }
+    /* END NAV CSS */
+    
+    /* FOOTER CSS */
+    footer {
+        background-color: #000000;
+    }
+    
+    footer > .container > .footer-container > .menu-container > a {
+        font-size: 19px;
+    }
+    
+    /* END FOOTER CSS */
+
+    /* MAIN */
+    main > section {
+        margin-top: 100px;
+    }
+
+    main > section:last-child {
+        margin-bottom: 100px;
+    }
+    /* END MAIN */
+}
+
+/* 80 rem */
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1280px;
+    }
+
+    /* MOBILE NAV BAR */
+    .navbar {
+        width: 100%;
+    }
+    /* END MOBILE NAV BAR */
+    
+    /* NAVIGATION CSS */
+    nav > .container > .logo-container {
+        padding-left: 85px;
+    }
+    
+    nav > .container > .menu-container {
+        padding-right: 85px;
+        margin: auto 0;
+        visibility: visible;
+    }
+
+    nav > .container > .menu-container > a {
+        width: 100px;
+        text-align: center;
+    }
+    
+    nav > .container > .menu-container > a:not(:last-of-type) {
+        margin-right: 0;
+    }
+    
+    nav > .container > .menu-container > .social-icons-container {
+        margin-left: 100px;
+    }
+    /* END NAV CSS */
+    
+    /* FOOTER CSS */
+    footer > .container > .footer-container > .menu-container > a {
+        font-size: 28px;
+    }
+    
+    footer > .container > .footer-container > .menu-container > a:not(:last-of-type) {
+        margin-right: 40px
+    }
+    
+    /* END FOOTER CSS */
+}

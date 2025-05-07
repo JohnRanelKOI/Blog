@@ -1,0 +1,219 @@
+/* CONTACT CSS */
+main > .contact-us > .container > .form-background {
+    display: block;
+    z-index: 1;
+    background-color: #F5EEE6;
+    height: 560px;
+    width: auto;
+}
+
+main > .contact-us > .container > .form-background > .form-container {
+    padding: 50px 0 0 0;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > h1 {
+    font-family: "Oleo-Script";
+    font-size: 96px;
+    line-height: 0;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > input {
+    font-family: "Instrument-Sans";
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 8px 20px;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > textarea {
+    font-family: "Instrument-Sans";
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 8px 20px;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    height: 460px;
+    width: auto;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(2), 
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(3) {
+    width: 100%;
+    float: left;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > div {
+    padding: 10px 0;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > label {
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(4), 
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(5) {
+    width: 100%;
+    float: left;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > legend {
+    font-family: "Oleo-Script";
+    font-size: 56px;
+}
+
+main > .contact-us > .container > .form-background > .form-container > form > fieldset > button {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    float: right;
+    background-color: #ffffff;
+}
+
+main > .contact-us > .container > .form-background > img {
+    display: none;
+    width: 530px;
+    margin-left: -60px;
+    margin-top: 50px;
+    z-index: 1;
+}
+/* END CONTACT CSS */
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    /* CONTACT CSS */
+    main > .contact-us > .container > .form-background {
+        display: flex;
+        width: 660px;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container {
+        padding: 110px 0 0 80px;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form {
+        width: 520px;
+        padding: 45px;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(2), 
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(3) {
+        width: 50%;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div {
+        padding: 10px 0;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > label {
+        font-family: "Instrument-Sans";
+        font-size: 16px;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > input, textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #000000;
+        font-size: 16px;
+        padding: 5px 20px;
+        font-family: "Instrument-Sans";
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(4), 
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(5) {
+        width: 100%;
+        float: left;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > legend {
+        font-size: 96px;
+    }
+
+    main > .contact-us > .container > .form-background > img {
+        display: block;
+        margin-left: -120px;
+    }
+    /* END CONTACT CSS */
+}
+
+/* 80 rem */
+@media screen and (min-width: 1280px) {
+    /* CONTACT CSS */
+    main > .contact-us > .container > .form-background > .form-container > form {
+        height: 450px;
+        width: 520px;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div {
+        padding: 10px 0;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > label {
+        font-family: "Instrument-Sans";
+        font-size: 16px;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > input, textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #000000;
+        font-size: 16px;
+        padding: 5px 20px;
+        font-family: "Instrument-Sans";
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(4), 
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(5) {
+        width: 100%;
+        float: left;
+    }
+
+    main > .contact-us > .container > .form-background > img {
+        margin-left: -60px;
+    }
+    /* END CONTACT CSS */
+}
+
+/* 96 rem */
+@media screen and (min-width: 1536px) {
+    /* CONTACT CSS */
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div {
+        padding: 10px 0;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > label {
+        font-family: "Instrument-Sans";
+        font-size: 16px;
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div > input, textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #000000;
+        font-size: 16px;
+        padding: 5px 20px;
+        font-family: "Instrument-Sans";
+    }
+
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(4), 
+    main > .contact-us > .container > .form-background > .form-container > form > fieldset > div:nth-child(5) {
+        width: 100%;
+        float: left;
+    }
+    /* END CONTACT CSS */
+}

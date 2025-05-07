@@ -1,0 +1,215 @@
+/* ABOUT CSS */
+main > .about-banner {
+    display: block;
+    align-items: center;
+}
+
+main > .about-banner > .banner-picture {
+    background-color: #F5EEE6;
+    height: auto;
+    flex: 0;
+    text-align: center;
+}
+
+main > .about-banner > .banner-picture > img {
+    margin: 20px 20px;
+    border-radius: 0;
+    width: 90%;
+}
+
+main > .about-banner > .banner-content {
+    background-color: #F5EEE6;
+    height: auto;
+    flex: 0;
+}
+
+main > .about-banner > .banner-content > .message {
+    padding: 20px 20px;
+    width: auto;
+}
+
+main > .about-banner > .banner-content > .message > h1 {
+    font-family: "Oleo-Script";
+    font-size: 56px;
+    line-height: 20px;
+}
+
+main > .about-banner > .banner-content > .message > p {
+    font-family: "Inter";
+    font-size: 20px;
+    line-height: 36px;
+}
+
+main > .recent-blog-posts > .container > h2 {
+    font-family: "Oleo-Script";
+    font-size: 46px;
+    line-height: 36px;
+}
+
+main > .recent-blog-posts > .container > .blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > figure {
+    margin: 5px;
+    position: relative;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > figure > img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    filter: brightness(100%);
+    transition: all 0.5s ease-out;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > figure:hover > img {
+    filter: brightness(70%);
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > figure > figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > h3 {
+    font-family: "Instrument-Sans";
+    font-weight: 600;
+    font-size: 20px;
+    margin: 20px 0 10px;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > p {
+    font-family: "Instrument-Sans";
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > figure > .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > figure > .overlay::after {
+    content: "\27F6";
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    font-size: 30px;
+    position: relative;
+    top: -5px;
+    padding-left: 5px;
+}
+
+main > .recent-blog-posts > .container > .blog-posts > article > a > figure > .overlay > span {
+    font-family: "Instrument-Sans";
+    color: #ffffff;
+    transition: all 0.5s ease-out;
+}
+/* END ABOUT CSS */
+
+/* 48rem */
+@media screen and (min-width: 768px) {
+    /* ABOUT CSS */
+    main > .about-banner > .banner-picture {
+        text-align: right;
+    }
+
+    main > .about-banner > .banner-picture > img {
+        width: 40%;
+    }
+
+    main > .about-banner > .banner-content > .message {
+        padding: 50px 50px;
+    }
+    /* END ABOUT CSS */
+}
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    /* ABOUT CSS */
+    main > .about-banner {
+        display: flex;
+    }
+
+    main > .about-banner > .banner-picture {
+        height: 720px;
+        flex: 1;
+    }
+
+    main > .about-banner > .banner-picture > img {
+        margin: 70px 70px;
+        border-radius: 25px;
+        width: auto;
+    }
+
+    main > .about-banner > .banner-content {
+        height: 680px;
+        flex: 1;
+    }
+
+    main > .about-banner > .banner-content > .message {
+        padding: 20px 70px;
+        width: 500px;
+    }
+
+    main > .about-banner > .banner-content > .message > h1 {
+        font-size: 96px;
+        line-height: 0;
+    }
+
+    main > .recent-blog-posts > .container > .blog-posts > article {
+        width: 25%;
+    }
+    /* END ABOUT CSS */
+}
+
+/* 80 rem */
+@media screen and (min-width: 1280px) {
+    /* ABOUT CSS */
+    main > .recent-blog-posts > .container > .blog-posts > article {
+        width: 33.33%;
+    }
+    
+    main > .recent-blog-posts > .container > .blog-posts > article > a > figure {
+        margin: 20px;
+    }
+    
+    main > .recent-blog-posts > .container > .blog-posts > article > a > h3 {
+        margin: 20px 20px;
+    }
+    
+    main > .recent-blog-posts > .container > .blog-posts > article > a > p {
+        margin: 20px 20px;
+    }
+    /* END ABOUT CSS */
+}
+
+/* 96 rem */
+@media screen and (min-width: 1536px) {
+    /* ABOUT CSS */
+    main > .recent-blog-posts > .container > .blog-posts > article > a > figure > img {
+        height: 350px;
+    }
+    /* END ABOUT CSS */
+}
