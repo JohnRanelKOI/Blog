@@ -8,6 +8,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title><?php echo strtoupper($navigation->getActivePage()) ?> | LIFE MUSINGS BY JANE</title>
+        <link rel="icon" href="./assets/images/flex/favicon.ico" type="image/x-icon">
+        <meta name="description" content="A space where everyday thoughts turn into meaningful reflections. From personal stories to life lessons, I share musings on love, growth, and the little joys that make life beautiful. Grab a cup of coffee, take a deep breath, and explore the journey with me.">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="LIFE MUSINGS BY JANE">
+        <meta property="og:description" content="A space where everyday thoughts turn into meaningful reflections. From personal stories to life lessons, I share musings on love, growth, and the little joys that make life beautiful. Grab a cup of coffee, take a deep breath, and explore the journey with me.">
+        <meta property="og:url" content="https://lifemusingsofjane.infinityfreeapp.com/">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="LIFE MUSINGS BY JANE">
+        <meta name="twitter:description" content="A space where everyday thoughts turn into meaningful reflections. From personal stories to life lessons, I share musings on love, growth, and the little joys that make life beautiful. Grab a cup of coffee, take a deep breath, and explore the journey with me.">
+        <link rel="canonical" href="https://lifemusingsofjane.infinityfreeapp.com/">
         <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/styles/header-footer.css" type="text/css">
         <?php
             if(strpos($navigation->getActivePage(), "admin") === false) {
@@ -41,7 +52,7 @@
         <nav>
             <div class="container">
                 <div class="logo-container">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="<?php echo SITE_URL; ?>/assets/images/nav/life_musings_of_jane_logo.png" alt="Life Musings of Jane logo">
                     </a>
                 </div>

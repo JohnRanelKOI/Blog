@@ -3,10 +3,11 @@ $(document).ready(function() {
         event.preventDefault();
         var formData = new FormData(this);
         formData.append("post_id", $(this).attr("data-post_id"));
-        ajaxRequest("POST", formData);
+        await ajaxRequest("POST", formData);
+        location.reload();
     });
 
-    $(document).on("submit", ".update_comment", async function(event) {
+    $(".update_comment").on("submit", function(event) {
         event.preventDefault();
         var formData = new FormData(this);
         let formDataObj = {};
@@ -16,6 +17,8 @@ $(document).ready(function() {
             formDataObj[key] = value;
         }
         ajaxRequest("PUT", formDataObj);
+        $(`.comment-${$(this).attr("data-id")}`).text(formData.get("comment"));
+        $(".form-modal[data-modal_name='update_comment_modal']").css("display", "none");
     });
 
     $(document).on("click", ".update-comment-btn", function(event) {
@@ -40,6 +43,8 @@ $(document).ready(function() {
         event.preventDefault();
         let comment_id = $(this).attr("data-id");
         ajaxRequest("DELETE", "", `?id=${comment_id}`);
+        $(".form-modal[data-modal_name='delete_comment_modal']").css("display", "none");
+        $(`.comment-container-${comment_id}`).remove();
     });
 
     $(".close-modal").on("click", function() {

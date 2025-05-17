@@ -10,13 +10,13 @@
                         $buttons .= '<button class="delete-comment-btn" data-modal_name="delete_comment_modal" data-id="' . $row["id"] . '">Delete</button>';
                     }
                 }
-                echo '<div class="comment">
+                echo '<div class="comment comment-container-' . $row["id"] . '">
                     <div>
                         <img src="data:image/png;base64,' . base64_encode($row["image"]) . '" alt="user profile picture" />
                     </div>
                     <div>
                         <span>' . $row["first_name"] . " " . $row["last_name"] . '<span>'. date('j M Y', strtotime($row["created_at"])) .'</span></span>
-                        <p>' . $row["comment"] . '</p>
+                        <p class="comment-' . $row["id"] . '">' . $row["comment"] . '</p>
                         ' . $buttons . '
                     </div>
                 </div>';

@@ -2,7 +2,7 @@
             <div class="container">
                 <div class="footer-container">
                     <div class="logo-container">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="<?php echo SITE_URL; ?>/assets/images/footer/life_musings_of_jane_logo.png" alt="Life Musings of Jane logo">
                         </a>
                     </div>
