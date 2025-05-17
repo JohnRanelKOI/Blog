@@ -39,6 +39,7 @@
                     first_name,
                     last_name,
                     email,
+                    role,
                     password,
                     phone,
                     address
@@ -48,11 +49,12 @@
                     ?,
                     ?,
                     ?,
+                    ?,
                     ?
                 );
             ";
-            $type="ssssss";
-            $fields_array = [$first_name, $last_name, $email, $password, $phone, $address];
+            $type="sssssss";
+            $fields_array = [$first_name, $last_name, $email, "member", $password, $phone, $address];
             $this->executeQuery('inserting a user', $query, $type, $fields_array);
             return $this->db_conn->insert_id;
         }
@@ -88,7 +90,7 @@
                 mysqli_stmt_execute($stmt);
                 return mysqli_stmt_get_result($stmt);
             } catch(Exception $e) {
-                throw new Exception("User database queries for '$action'.");
+                throw new Exception("User database queries for '$action'." . $e->getMessage());
             }
         }
     }
