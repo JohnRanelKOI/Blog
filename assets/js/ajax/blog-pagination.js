@@ -17,7 +17,7 @@ $(document).ready(function () {
         for(let i = 0; i < blog_posts.length; i++) {
             $(".blog-posts").append(`
                 <article data-category="${blog_posts[i].category}">
-                    <a href="/blog-post.php?title=${blog_posts[i].slug_title}">
+                    <a href="/blog_post.php?title=${blog_posts[i].slug_title}">
                         <figure>
                             <img src="${blog_posts[i].image_url}" alt="${blog_posts[i].title}">
                             <div class="overlay">

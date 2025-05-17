@@ -2,7 +2,7 @@
     include_once("../includes/global_variables.php");
     include_once("../helpers/authentication.php");
     include_once(SITE_ROOT . "/includes/header.php");
-    require_once(SITE_ROOT . "/includes/config.php");
+    include_once(SITE_ROOT . "/includes/config.php");
     require_once(SITE_ROOT . "/models/blog.php");
 
     $blog_posts_fetch = new Blog($db_conn);

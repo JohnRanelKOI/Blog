@@ -1,7 +1,7 @@
 <?php 
     include_once("./includes/global_variables.php");
     include_once("./helpers/authentication.php");
-    require_once(SITE_ROOT . "/includes/config.php");
+    include_once(SITE_ROOT . "/includes/config.php");
     require_once(SITE_ROOT . "/models/blog.php");
     require_once(SITE_ROOT . "/models/comment.php");
     

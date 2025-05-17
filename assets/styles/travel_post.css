@@ -203,6 +203,16 @@ main > .travel-post > .container > article > .stay-at-details > .comment-section
     margin-bottom: 5px;
 }
 
+.no-posts {
+    border: 1px solid #000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #FFFFFF;
+    width: auto;
+    justify-self: center;
+}
+
 /* 40rem */
 @media screen and (min-width: 640px) {
     main > .travel-post > .container > article {

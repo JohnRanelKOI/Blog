@@ -17,7 +17,7 @@
                     while($row = $blog_data->fetch_assoc()) {
                         echo '
                             <article class="blog-item">
-                                <a href="/blog-post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
+                                <a href="/blog_post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
                                     <figure>
                                         <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '">
                                         <div class="overlay">

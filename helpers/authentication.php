@@ -12,7 +12,15 @@
         $_SESSION["last_name"] = $user_data["last_name"];
         $_SESSION["email"] = $user_data["email"];
         $_SESSION["role"] = $user_data["role"];
+        $_SESSION["phone"] = $user_data["phone"];
+        $_SESSION["address"] = $user_data["address"];
         $_SESSION["logged_in"] = true;
+    }
+
+    function unauthorizedAccessRedirect() {
+        if(!isLoggedIn() || (isLoggedIn() && !isUserAdmin())) {
+            header("Location: /index.php?unauthorized=1");
+        }
     }
 
     function isLoggedIn() {

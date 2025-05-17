@@ -15,7 +15,7 @@
                 while($row = $travel_data->fetch_assoc()) {
                     echo '
                         <article>
-                            <a href="/travel-post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
+                            <a href="/travel_post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
                                 <figure>
                                     <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '">
                                     <figcaption>' . htmlspecialchars($row["title"]) . '</figcaption>

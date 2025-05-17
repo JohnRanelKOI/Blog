@@ -2,7 +2,7 @@
     $server = "ict726_tutorial6-db-1";
     $username = "root";
     $password = "root";
-    $database = "blog";
+    $database = "testdb";
 
     $db_conn = new mysqli($server, $username, $password, $database);
 

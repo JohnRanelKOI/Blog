@@ -25,7 +25,17 @@ $(document).ready(function() {
         checkInput("password", isValidPassword, "Password must consist of aleast 8 chars, 1 num, 1 special char (!@#$%&*).", "button[type=submit]");
     }
 
-    if(currentURL == "/travel-post.php" || currentURL == "/blog-post.php") {
+    if(currentURL == "/my_profile.php") {
+        validations.first_name = true;
+        validations.last_name = true;
+        validations.email = true;
+
+        checkInput("first_name", hasValidLength, "First name should contain atleast 1 character.", "button[type=submit]");
+        checkInput("last_name", hasValidLength, "Last name should contain atleast 1 character.", "button[type=submit]");
+        checkInput("email", isValidEmail, "Enter valid a email address.", "button[type=submit]");
+    }
+
+    if(currentURL == "/travel_post.php" || currentURL == "/blog_post.php") {
         $(".create_comment>button[type=submit]").attr("disabled", "disabled");
         validations.comment = false;
         checkInput("comment", hasValidLength, "Comment should contain atleast 2 character.", ".create_comment>button[type=submit]", ".create_comment>textarea[name=comment]");

@@ -1,7 +1,6 @@
 <?php
     include_once("./includes/global_variables.php");
     include_once("./helpers/authentication.php");
-
     include_once(SITE_ROOT . "/includes/header.php");
 ?>
 <main>

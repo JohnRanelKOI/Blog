@@ -1,7 +1,6 @@
 <?php
     require("./../includes/global_variables.php");
-    require_once(SITE_ROOT . "/helpers/authentication.php");
-    require_once(SITE_ROOT . "/includes/config.php");
+    include_once(SITE_ROOT . "/includes/config.php");
     require_once(SITE_ROOT . "/models/comment.php");
 
     $comments_init = new Comment($db_conn);

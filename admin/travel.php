@@ -2,7 +2,7 @@
     include_once("../includes/global_variables.php");
     include_once("../helpers/authentication.php");
     include_once(SITE_ROOT . "/includes/header.php");
-    require_once(SITE_ROOT . "/includes/config.php");
+    include_once(SITE_ROOT . "/includes/config.php");
     require_once(SITE_ROOT . "/models/travel.php");
 
     $travel_posts_fetch = new Travel($db_conn);

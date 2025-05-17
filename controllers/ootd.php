@@ -1,6 +1,7 @@
 <?php
     require("./../includes/global_variables.php");
-    require_once(SITE_ROOT . "/includes/config.php");
+    include_once(SITE_ROOT . "/helpers/authentication.php");
+    include_once(SITE_ROOT . "/includes/config.php");
     require_once(SITE_ROOT . "/models/ootd.php");
     require_once(SITE_ROOT . "/models/image.php");
 
@@ -33,15 +34,17 @@
             }
             break;
         case "POST":
+            unauthorizedAccessRedirect();
             $title = htmlspecialchars($_POST["title"] ?? '');
             $category = htmlspecialchars($_POST["category"] ?? '');
             $date = htmlspecialchars($_POST["date"] ?? '');
             $file = $_FILES["post_image"];
-            $new_ootd_post_id = $ootd_posts_init->insertNewPost(1, "ootd", $title, $category, $date);
+            $new_ootd_post_id = $ootd_posts_init->insertNewPost($_SESSION["user_id"], "ootd", $title, $category, $date);
             $post_image_init->insertNewImage($new_ootd_post_id, $file, SITE_ROOT, SITE_URL);
             echo $new_ootd_post_id;
             break;
         case "PUT":
+            unauthorizedAccessRedirect();
             $input_data = file_get_contents("php://input");
             $post_data = json_decode($input_data, true);
             if(isset($post_data["post_image"])) {
@@ -50,6 +53,7 @@
             $ootd_posts_init->updatePost($post_data["id"], $post_data["title"], $post_data["category"], $post_data["date"]);
             break;
         case "DELETE":
+            unauthorizedAccessRedirect();
             $file_path = SITE_ROOT . "/uploads/" . basename($_GET["image_url"]);
             $post_image_init->deleteImage($_GET["id"], $file_path);
             $ootd_posts_init->deletePost($_GET["id"]);

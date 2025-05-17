@@ -1,5 +1,5 @@
 <?php
-    require_once(SITE_ROOT . "/helpers/navigation.php");
+    include_once(SITE_ROOT . "/helpers/navigation.php");
     $navigation = new Navigation(SITE_PATH);
 ?>
 <!DOCTYPE html>
@@ -76,7 +76,7 @@
                                     $admin_links = "<li><a href='/admin/dashboard.php'>ADMIN DASHBOARD</a></li>";
                                 }
                                 echo "<li class='drop-down'>
-                                        <a href='/login.php'" . $navigation->ifPageActiveReturnClassActive("login") . ">MY PROFILE</a>
+                                        <a href='/my_profile.php'" . $navigation->ifPageActiveReturnClassActive("my_profile") . ">MY PROFILE</a>
                                         <ul>
                                             " . $admin_links . "
                                             <li><a href='/controllers/login.php?logout=true'>LOGOUT</a></li>

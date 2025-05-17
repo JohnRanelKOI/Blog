@@ -1,7 +1,7 @@
 <?php
     require("./../includes/global_variables.php");
-    require_once(SITE_ROOT . "/helpers/authentication.php");
-    require_once(SITE_ROOT . "/includes/config.php");
+    include_once(SITE_ROOT . "/helpers/authentication.php");
+    include_once(SITE_ROOT . "/includes/config.php");
     require_once(SITE_ROOT . "/models/user.php");
 
     $users_init = new User($db_conn);
