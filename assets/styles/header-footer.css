@@ -125,7 +125,26 @@ nav > .container > .menu-container.is-open {
     transform: translateX(0%);
 }
 
-nav > .container > .menu-container > a {
+nav > .container > .menu-container > ul {
+    display: block;
+    gap: 50px;
+    padding: 0;
+    list-style: none;
+}
+
+nav > .container > .menu-container > ul > li > ul {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+}
+
+nav > .container > .menu-container > ul > li > a > img {
+    width: 15px;
+}
+
+nav > .container > .menu-container > ul > li > a {
     font-family: "Oleo-Script";
     font-size: 30px;
     text-decoration: none;
@@ -134,12 +153,21 @@ nav > .container > .menu-container > a {
     transition: all ease-in 0.1s;
 }
 
-nav > .container > .menu-container > a:not(.active):hover {
+nav > .container > .menu-container > ul > li > ul > li > a {
+    font-family: "Oleo-Script";
+    font-size: 30px;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 20px;
+    transition: all ease-in 0.1s;
+}
+
+nav > .container > .menu-container > ul > li > a:not(.active):hover {
     color: #c39078;
     font-weight: 600;
 }
 
-nav > .container > .menu-container > a.active:hover {
+nav > .container > .menu-container > ul > li > a.active:hover {
     font-weight: 600;
 }
 
@@ -301,6 +329,15 @@ footer > .container > .footer-container > .logo-container > a > img {
     nav > .container > .menu-container > a:not(:last-of-type) {
         margin-right: 0;
     }
+
+    nav > .container > .menu-container > ul {
+        display: block;
+        list-style: none;
+    }
+
+    nav > .container > .menu-container > .social-icons-container {
+        margin-top: 20px;
+    }
     /* END MOBILE NAV BAR */
 
 
@@ -319,7 +356,7 @@ footer > .container > .footer-container > .logo-container > a > img {
 /* 48rem */
 @media screen and (min-width: 768px) {
     .container {
-        width: 768px;
+        width: 718px;
     }
 
     /* FOOTER CSS */
@@ -388,13 +425,35 @@ footer > .container > .footer-container > .logo-container > a > img {
         margin: auto 0;
         background-color: transparent;
         visibility: visible;
+        align-items: center;
     }
 
     nav > .container > .menu-container > .close-menu {
         display: none;
     }
     
-    nav > .container > .menu-container > a {
+    nav > .container > .menu-container > ul > li > a {
+        font-family: "Inter";
+        font-size: 18px;
+        text-decoration: none;
+        color: #000000;
+        margin-bottom: 0;
+    }
+
+    nav > .container > .menu-container > ul > li > ul {
+        position: absolute;
+        text-align: left;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        margin-top: 10px;
+        visibility: hidden;
+    }
+
+    nav > .container > .menu-container > ul > li > ul > li {
+        margin: 10px;
+    }
+
+    nav > .container > .menu-container > ul > li > ul > li > a {
         font-family: "Inter";
         font-size: 18px;
         text-decoration: none;
@@ -407,7 +466,13 @@ footer > .container > .footer-container > .logo-container > a > img {
     }
     
     nav > .container > .menu-container > .social-icons-container {
+        margin-top: 0px;
         margin-left: 50px;
+    }
+
+    nav > .container > .menu-container > ul {
+        display: flex;
+        gap: 30px;
     }
     /* END NAV CSS */
     
@@ -468,6 +533,10 @@ footer > .container > .footer-container > .logo-container > a > img {
     nav > .container > .menu-container > .social-icons-container {
         margin-left: 100px;
     }
+
+    nav > .container > .menu-container > ul {
+        gap: 50px;
+    }
     /* END NAV CSS */
     
     /* FOOTER CSS */
@@ -478,6 +547,5 @@ footer > .container > .footer-container > .logo-container > a > img {
     footer > .container > .footer-container > .menu-container > a:not(:last-of-type) {
         margin-right: 40px
     }
-    
     /* END FOOTER CSS */
 }

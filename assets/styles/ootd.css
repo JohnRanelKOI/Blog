@@ -151,6 +151,17 @@ main > .ootd > .container > .ootd-posts > a > p {
 .image-preview > .container > button > img {
     height: 20px;
 }
+
+.more-ootds {
+    border: 1px solid #000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    width: 100px;
+    justify-self: center;
+}
 /* END OOTD CSS */
 
 /* 48rem */

@@ -1,0 +1,277 @@
+.form-modal {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 999;
+}
+
+.form-modal > .container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.form-modal > .container > .modal-inner {
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    align-self: center;
+    animation-name: animateFade;
+    animation-duration: 1s;
+    font-family: "Instrument-Sans";
+}
+
+.form-modal > .container > .modal-inner > h3, p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.form-modal > .container > .modal-inner > button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    align-self: end;
+    top: 20px;
+}
+
+.form-modal > .container > .modal-inner > button > img {
+    height: 20px;
+}
+
+.create-update-post > div > label {
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+}
+
+.create-update-post > div > input, textarea, select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    font-family: "Instrument-Sans";
+}
+
+.create-update-post > button {
+    border: 1px solid #000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    float: right;
+    background-color: #a0d9a2;
+    cursor: pointer;
+}
+
+.form-modal > .container > .modal-inner > div > .confirm {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #a0d9a2;
+    cursor: pointer;
+}
+
+.form-modal > .container > .modal-inner > div > .reject {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #e8524a;
+    cursor: pointer;
+}
+
+@keyframes animateFade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+main > .container {
+    padding: 10px;
+    display: grid;
+    gap: 0;
+    grid-template-columns: unset;
+    grid-template-areas: unset;
+}
+
+main > .container > aside, section {
+    font-family: "Instrument-Sans";
+    padding: 10px;
+}
+
+main > .container > aside > ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+main > .container > aside > ul > li {
+    padding: 10px 0;
+}
+
+main > .container > aside > ul > li > a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #000000;
+    width: 150px;
+    text-decoration: none;
+    color: #000000;
+}
+
+main > .container > aside > ul > li > a.active {
+    background-color: #F5EEE6;
+    font-weight: 600;
+}
+
+main > .container > aside > ul > li > a:not(.active):hover {
+    background-color: #f4f3ff;
+    font-weight: 600;
+}
+
+main > .container > section > .create-post {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #d9d7ff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+main > .container > section > table > tbody > tr > td > .edit-post {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #f7ffd7;
+    cursor: pointer;
+}
+
+main > .container > section > table > tbody > tr > td > .delete-post {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #e8524a;
+    cursor: pointer;
+}
+
+main > .container > section > table {
+    text-align: left;
+}
+
+main > .container > section > table > thead > tr > th {
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #000000;
+    background-color: #F5EEE6;
+}
+
+main > .container > section > table > tbody > tr > td {
+    padding: 15px;
+    border: 1px solid #000000;
+}
+
+main > .container > section > table > tbody > tr > td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+    white-space: nowrap;
+}
+
+main > section {
+    margin: 0;
+}
+
+main > .container > section > .statistics {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+
+main > .container > section > .statistics > div {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+main > .container > section > .statistics > div > h2 {
+    font-size: 20px;
+    color: #555555;
+}
+
+main > .container > section > .statistics > div > span {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+main > .container > section {
+    overflow: scroll;
+}
+
+.error-message {
+    font-family: 'Inter';
+    font-size: 12px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: #e8524a;
+    color: #FFFFFF;
+}
+
+.post_image-error-container, .title-error-container, .short_description-error-container, .content-error-container, .category-error-container, .date-error-container {
+    margin-bottom: 5px;
+}
+
+.pagination>ul {
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+    display: flex;
+}
+
+.pagination>ul>li {
+    padding: 5px 0;
+    width: 30px;
+    text-align: center;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+/* 40rem */
+@media screen and (min-width: 640px) {
+    main > .container {
+        gap: 20px;
+        grid-template-columns: 215px;
+        grid-template-areas: 
+            "aside section";
+    }
+
+    main > .container > aside, section {
+        padding: 20px;
+    }
+
+    main > .container > section {
+        overflow: scroll;
+    }
+}
+
+/* 48rem */
+@media screen and (min-width: 768px) {
+    main > .container > section > .statistics {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+/* 64 rem */
+@media screen and (min-width: 1024px) {
+    main > .container > section > .statistics {
+        grid-template-columns: 33.33% 33.33% 33.33%;
+    }
+}
