@@ -27,6 +27,13 @@ $(document).ready(function () {
             `);
         }
 
+        if(ootd_posts.length === 0) {
+            $(".more-ootds").text("No posts available.");
+            $(".more-ootds").addClass("no-posts");
+            $(".no-posts").removeClass("more-ootds");
+            $(".more-ootds").css("width", "auto")
+        }
+
         return ootd_posts;
     }
 

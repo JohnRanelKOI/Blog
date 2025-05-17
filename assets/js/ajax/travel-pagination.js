@@ -30,6 +30,12 @@ $(document).ready(function () {
             `);
         }
 
+        if(travel_posts.length === 0) {
+            $(".more-travels").text("No posts available.");
+            $(".more-travels").addClass("no-posts");
+            $(".no-posts").removeClass("more-travels");
+        }
+
         return travel_posts;
     }
 

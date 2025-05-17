@@ -32,6 +32,12 @@ $(document).ready(function () {
             `);
         }
 
+        if(blog_posts.length === 0) {
+            $(".more-blogs").text("No posts available.");
+            $(".more-blogs").addClass("no-posts");
+            $(".no-posts").removeClass("more-blogs");
+        }
+
         return blog_posts;
     }
 

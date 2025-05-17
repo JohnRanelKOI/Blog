@@ -142,7 +142,7 @@ main > .travel > .container > .travel-posts > article > a > figure > .overlay > 
     transition: all 0.5s ease-out;
 }
 
-.more-travels {
+.more-travels, .no-posts {
     border: 1px solid #000;
     padding: 5px 20px;
     font-family: "Instrument-Sans";
@@ -151,6 +151,11 @@ main > .travel > .container > .travel-posts > article > a > figure > .overlay > 
     cursor: pointer;
     width: 100px;
     justify-self: center;
+}
+
+.no-posts {
+    cursor: auto;
+    width: auto;
 }
 /* END TRAVEL CSS */
 

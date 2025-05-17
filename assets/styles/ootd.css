@@ -152,7 +152,7 @@ main > .ootd > .container > .ootd-posts > a > p {
     height: 20px;
 }
 
-.more-ootds {
+.more-ootds, .no-posts {
     border: 1px solid #000;
     padding: 5px 20px;
     font-family: "Instrument-Sans";
@@ -161,6 +161,13 @@ main > .ootd > .container > .ootd-posts > a > p {
     cursor: pointer;
     width: 100px;
     justify-self: center;
+    z-index: 2;
+    position: relative;
+}
+
+.no-posts {
+    cursor: auto;
+    width: auto;
 }
 /* END OOTD CSS */
 

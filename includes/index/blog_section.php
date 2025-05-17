@@ -13,22 +13,26 @@
     <div class="container">
         <div class="blog-posts">
             <?php
-                while($row = $blog_data->fetch_assoc()) {
-                    echo '
-                        <article class="blog-item">
-                            <a href="/blog-post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
-                                <figure>
-                                    <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '">
-                                    <div class="overlay">
-                                        <span>Read More</span>
-                                    </div>
-                                    <figcaption>' . htmlspecialchars($row["title"]) . '</figcaption>
-                                </figure>
-                                <h3>' . htmlspecialchars($row["title"]) . '</h3>
-                                <p>' . htmlspecialchars($row["short_description"]) . '</p>
-                            </a>
-                        </article>
-                    ';
+                if($blog_data->num_rows != 0) {
+                    while($row = $blog_data->fetch_assoc()) {
+                        echo '
+                            <article class="blog-item">
+                                <a href="/blog-post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
+                                    <figure>
+                                        <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '">
+                                        <div class="overlay">
+                                            <span>Read More</span>
+                                        </div>
+                                        <figcaption>' . htmlspecialchars($row["title"]) . '</figcaption>
+                                    </figure>
+                                    <h3>' . htmlspecialchars($row["title"]) . '</h3>
+                                    <p>' . htmlspecialchars($row["short_description"]) . '</p>
+                                </a>
+                            </article>
+                        ';
+                    }
+                } else {
+                    echo '<div class="no-posts">No posts available.</div>';
                 }
             ?>
             <?php 

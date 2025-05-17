@@ -11,19 +11,21 @@
     <h2>TRAVEL</h2>
     <div class="travel-images">
         <?php
-            $count = 0;
-            while($row = $travel_data->fetch_assoc()) {
-                $count++;
-                echo '
-                    <article>
-                        <a href="/travel-post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
-                            <figure>
-                                <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '">
-                                <figcaption>' . htmlspecialchars($row["title"]) . '</figcaption>
-                            </figure>
-                        </a>
-                    </article>
-                ';
+            if($travel_data->num_rows != 0) {
+                while($row = $travel_data->fetch_assoc()) {
+                    echo '
+                        <article>
+                            <a href="/travel-post.php?title=' . htmlspecialchars($row["slug_title"]) . '">
+                                <figure>
+                                    <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '">
+                                    <figcaption>' . htmlspecialchars($row["title"]) . '</figcaption>
+                                </figure>
+                            </a>
+                        </article>
+                    ';
+                }
+            } else {
+                echo '<div class="no-posts">No posts available.</div>';
             }
         ?>
         <?php 

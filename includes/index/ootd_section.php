@@ -8,17 +8,21 @@
 ?>
 
 <section class="ootd">
-    <h2>OOTD</h2>
+    <h2 <?php if($travel_data->num_rows === 0) echo 'style="position: relative;"'; ?>>OOTD</h2>
     <div class="container">
         <div class="ootd-container">
             <?php
-                while($row = $ootd_data->fetch_assoc()) {
-                    echo '
-                        <figure>
-                            <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '" />
-                            <figcaption>' . htmlspecialchars($row["title"]) . '</figcaption>
-                        </figure>
-                    ';
+                if($travel_data->num_rows !== 0) {
+                    while($row = $ootd_data->fetch_assoc()) {
+                        echo '
+                            <figure>
+                                <img src="'. htmlspecialchars($row["image_url"]) .'" alt="' . htmlspecialchars($row["title"]) . '" />
+                                <figcaption>' . htmlspecialchars($row["title"]) . '</figcaption>
+                            </figure>
+                        ';
+                    }
+                } else {
+                    echo '<div class="no-posts">No posts available.</div>';
                 }
             ?>
         </div>

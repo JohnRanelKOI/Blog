@@ -39,6 +39,18 @@ main > .landing-banner > .banner-content > .message > p {
     font-size: 20px;
     line-height: 36px;
 }
+
+.no-posts {
+    border: 1px solid #000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #FFFFFF;
+    width: auto;
+    justify-self: center;
+    z-index: 2;
+    position: relative;
+}
 /* END LANDING PAGE BANNER CSS */
 
 /* TRAVEL CSS */
@@ -146,6 +158,10 @@ main > .travel > .travel-images > a > img {
     width: 50px;
     margin-left: 10px;
     transition: all 0.5s ease-out;
+}
+
+main > .travel > .travel-images .no-posts {
+    margin: 100px 0 0 100px;
 }
 /* END TRAVEL CSS */
 
@@ -356,6 +372,10 @@ main > .ootd > .container > a > img {
     width: 50px;
     margin-left: 10px;
     transition: all 0.5s ease-out;
+}
+
+main > .ootd > .container > .ootd-container > .no-posts {
+    margin: 80px 0 0 380px;
 }
 
 .image-preview {
