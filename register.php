@@ -37,7 +37,7 @@
                         <div class="password-error-container"></div>
                     </div>
                     <button type="submit">Submit</button>
-                    <div class="success-message"><?php echo $success_message; ?></div>
+                    <?php if($success_message !== null) echo '<div class="success-message">' . $success_message . '</div>'; ?>
                 </form>
             </div>
         </div>

@@ -8,11 +8,11 @@
 ?>
 
 <section class="ootd">
-    <h2 <?php if($travel_data->num_rows === 0) echo 'style="position: relative;"'; ?>>OOTD</h2>
+    <h2 <?php if($ootd_data->num_rows === 0) echo 'style="position: relative;"'; ?>>OOTD</h2>
     <div class="container">
         <div class="ootd-container">
             <?php
-                if($travel_data->num_rows !== 0) {
+                if($ootd_data->num_rows !== 0) {
                     while($row = $ootd_data->fetch_assoc()) {
                         echo '
                             <figure>

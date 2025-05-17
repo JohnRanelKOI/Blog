@@ -82,11 +82,11 @@ $(document).ready(function() {
             formData.append("id", $(this).attr("data-id"));
             formData.append("image_url", $(this).attr("data-img_url"));
             let formDataObj = await convertFormData(formData)
-            ajaxRequest("PUT", formDataObj);
+            ajaxRequest("POST", formData, "?type=update");
             setTableContent(formDataObj, "PUT");
             $(".form-modal[data-modal_name='create_update_post_modal']").css("display", "none");
         } else {
-            let post_id = await ajaxRequest("POST", formData);
+            let post_id = await ajaxRequest("POST", formData, "?type=create");
             formData.append("id", post_id);
             let formDataObj = await convertFormData(formData);
             setTableContent(formDataObj, "POST");

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    ootdCards(0,6);
+    ootdCards(0,8);
 
     $(document).on("click", ".more-ootds", async function() {
         let skip = parseInt($(this).attr("data-skip"));

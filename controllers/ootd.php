@@ -22,11 +22,11 @@
             break;
         case "POST":
             unauthorizedAccessRedirect();
-            echo insertOotdPost($ootd_posts_init, $post_image_init);
-            break;
-        case "PUT":
-            unauthorizedAccessRedirect();
-            updateOotdPost($ootd_posts_init, $post_image_init);
+            if(array_key_exists("type", $_GET) && $_GET["type"] === "create") {
+                echo insertOotdPost($ootd_posts_init, $post_image_init);
+            } else {
+                updateOotdPost($ootd_posts_init, $post_image_init);
+            }
             break;
         case "DELETE":
             unauthorizedAccessRedirect();
@@ -70,12 +70,14 @@
     }
 
     function updateOotdPost($ootd_posts_init, $post_image_init) {
-        $input_data = file_get_contents("php://input");
-        $post_data = json_decode($input_data, true);
-        if(isset($post_data["post_image"])) {
-            $post_image_init->updateImage($post_data["post_image"], $post_data["image_url"], SITE_ROOT);
+        $id = htmlspecialchars($_POST["id"] ?? '');
+        $title = htmlspecialchars($_POST["title"] ?? '');
+        $category = htmlspecialchars($_POST["category"] ?? '');
+        $date = htmlspecialchars($_POST["date"] ?? '');
+        if(isset($_FILES["post_image"])) {
+            $post_image_init->updateImage($_FILES["post_image"], $_POST["image_url"], SITE_ROOT);
         }
-        $ootd_posts_init->updatePost($post_data["id"], $post_data["title"], $post_data["category"], $post_data["date"]);
+        $ootd_posts_init->updatePost($id, $title, $category, $date);
     }
 
     function deleteOotdPost($ootd_posts_init, $post_image_init) {

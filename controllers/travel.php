@@ -8,7 +8,6 @@
     $travel_posts_init = new Travel($db_conn);
     $post_image_init = new Image($db_conn);
 
-
     switch($_SERVER["REQUEST_METHOD"]) {
         case "GET":
             if(array_key_exists("id", $_GET)) {
@@ -23,11 +22,11 @@
             break;
         case "POST":
             unauthorizedAccessRedirect();
-            echo insertTravelPost($travel_posts_init, $post_image_init);
-            break;
-        case "PUT":
-            unauthorizedAccessRedirect();
-            updateTravelPost($travel_posts_init, $post_image_init);
+            if(array_key_exists("type", $_GET) && $_GET["type"] === "create") {
+                echo insertTravelPost($travel_posts_init, $post_image_init);
+            } else {
+                updateTravelPost($travel_posts_init, $post_image_init);
+            }
             break;
         case "DELETE":
             unauthorizedAccessRedirect();
@@ -73,12 +72,15 @@
     }
 
     function updateTravelPost($travel_posts_init, $post_image_init) {
-        $input_data = file_get_contents("php://input");
-        $post_data = json_decode($input_data, true);
-        if(isset($post_data["post_image"])) {
-            $post_image_init->updateImage($post_data["post_image"], $post_data["image_url"], SITE_ROOT);
+        $id = htmlspecialchars($_POST["id"] ?? '');
+        $title = htmlspecialchars($_POST["title"] ?? '');
+        $content = htmlspecialchars($_POST["content"] ?? '');
+        $category = htmlspecialchars($_POST["category"] ?? '');
+        $date = htmlspecialchars($_POST["date"] ?? '');
+        if(isset($_FILES["post_image"])) {
+            $post_image_init->updateImage($_FILES["post_image"], $_POST["image_url"], SITE_ROOT);
         }
-        $travel_posts_init->updatePost($post_data["id"], $post_data["title"], convertTitleToURL($post_data["title"]), $post_data["content"], $post_data["category"], $post_data["date"]);
+        $travel_posts_init->updatePost($id, $title, convertTitleToURL($title), $content, $category, $date);
     }
 
     function deleteTravelPost($travel_posts_init, $post_image_init) {

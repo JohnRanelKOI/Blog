@@ -23,11 +23,9 @@
             return $this->uploadimage($image_data, $file_path, $image_url, $unique_name);
         }
 
-        public function updateImage($img_encoded, $image_url, $file_path) {
-            $image_name = basename($image_url);
-            $target_path = $file_path . "/uploads/" . $image_name;
-            $decoded_image = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $img_encoded));
-            file_put_contents($target_path, $decoded_image);
+        public function updateImage($image_data, $image_url, $file_path) {
+            $unique_name = basename($image_url);
+            $this->uploadimage($image_data, $file_path, $image_url, $unique_name);
         }
 
         public function deleteImage($post_id, $image_url) {
