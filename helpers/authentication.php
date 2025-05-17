@@ -14,6 +14,7 @@
         $_SESSION["role"] = $user_data["role"];
         $_SESSION["phone"] = $user_data["phone"];
         $_SESSION["address"] = $user_data["address"];
+        $_SESSION["image"] = $user_data["image"];
         $_SESSION["logged_in"] = true;
     }
 

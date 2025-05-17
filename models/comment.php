@@ -14,7 +14,7 @@
         }
 
         public function getCommentsByPostId($id) {
-            $query = "SELECT comments.*, users.first_name, users.last_name
+            $query = "SELECT comments.*, users.first_name, users.last_name, users.image
                 FROM comments
                 INNER JOIN users ON comments.user_id=users.id
                 WHERE post_id = ?

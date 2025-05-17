@@ -1,5 +1,6 @@
 <?php
     require("./../includes/global_variables.php");
+    include_once(SITE_ROOT . "/helpers/authentication.php");
     include_once(SITE_ROOT . "/includes/config.php");
     require_once(SITE_ROOT . "/models/comment.php");
 
@@ -18,7 +19,7 @@
     }
 
     function insertComment($comments_init) {
-        $user_id = htmlspecialchars($_SESSION["user_id"] ?? '');
+        $user_id = $_SESSION["user_id"];
         $post_id = htmlspecialchars($_POST["post_id"] ?? '');
         $comment = htmlspecialchars($_POST["comment"] ?? '');
         $new_comment_id = $comments_init->insertNewComment($user_id, $post_id, $comment);

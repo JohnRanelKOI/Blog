@@ -15,8 +15,12 @@
         <div class="container">
             <div class="form-container">
                 <h1>My Profile</h1>
-                <form action="<?php echo SITE_URL; ?>/controllers/user.php" method="POST">
+                <form action="<?php echo SITE_URL; ?>/controllers/user.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
+                    <div>
+                        <label for="image">Profile picture</label>
+                        <input type="file" name="image" accept=".png,.jpeg,.jpg,.webp"/>
+                    </div>
                     <div>
                         <label for="first_name">First name</label>
                         <input type="text" name="first_name" placeholder="Enter your first name" value="<?php echo $_SESSION["first_name"]; ?>">

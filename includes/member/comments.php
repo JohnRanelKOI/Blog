@@ -12,7 +12,7 @@
                 }
                 echo '<div class="comment">
                     <div>
-                        <img src="./assets/images/travel/thumbnail/philippines.png" alt="user profile picture" />
+                        <img src="data:image/png;base64,' . base64_encode($row["image"]) . '" alt="user profile picture" />
                     </div>
                     <div>
                         <span>' . $row["first_name"] . " " . $row["last_name"] . '<span>'. date('j M Y', strtotime($row["created_at"])) .'</span></span>
@@ -26,14 +26,14 @@
         }
     ?>
     <?php if(isLoggedIn()) { ?>
-    <div class="comment-input">
-        <h4>Write a comment</h4>
-        <form class="create_comment" method="POST" data-post_id="<?php echo SITE_PATH === "/travel-post" ?  $travel_post["id"] : $blog_post["id"]; ?>">
-            <textarea name="comment" rows="5" placeholder="Write your comments..." required></textarea>
-            <button type="submit">Submit</button>
-            <div class="comment-error-container"></div>
-        </form>
-    </div>
+        <div class="comment-input">
+            <h4>Write a comment</h4>
+            <form class="create_comment" method="POST" data-post_id="<?php echo SITE_PATH === "/travel_post" ?  $travel_post["id"] : $blog_post["id"]; ?>">
+                <textarea name="comment" rows="5" placeholder="Write your comments..." required></textarea>
+                <button type="submit">Submit</button>
+                <div class="comment-error-container"></div>
+            </form>
+        </div>
     <?php } ?>
 </div>
 <?php include_once(SITE_ROOT . "/includes/member/delete_comment.php") ?>

@@ -20,7 +20,7 @@
         <script type="text/javascript" src="<?php echo SITE_URL; ?>/assets/js/scripts.js"></script>
         <script type="text/javascript" src="<?php echo SITE_URL; ?>/assets/js/helpers/helpers.js"></script>
         <?php
-            if(SITE_PATH === "/travel-post" || SITE_PATH === "/blog-post")
+            if(SITE_PATH === "/travel_post" || SITE_PATH === "/blog_post")
                 echo '<script type="text/javascript" src="' . SITE_URL . '/assets/js/ajax/comments.js"></script>';
             if(SITE_PATH === "/blog")
                 echo '<script type="text/javascript" src="' . SITE_URL . '/assets/js/ajax/blog-pagination.js"></script>';

@@ -32,7 +32,8 @@
         $email = htmlspecialchars($_POST["email"] ?? '');
         $phone = htmlspecialchars($_POST["phone"] ?? '');
         $address = htmlspecialchars($_POST["address"] ?? '');
-        $updated_user_id = $users_init->updateUser($_SESSION["user_id"], $first_name, $last_name, $email, $phone, $address);
+        $image = ($_FILES['image']) ? file_get_contents($_FILES['image']['tmp_name']) : '';
+        $updated_user_id = $users_init->updateUser($_SESSION["user_id"], $first_name, $last_name, $email, $phone, $address, $image);
         $updated_user_data = [
             "id" => $_SESSION["user_id"], 
             "role" => $_SESSION["role"], 
@@ -40,7 +41,8 @@
             "last_name" => $last_name, 
             "email" => $email, 
             "phone" => $phone, 
-            "address" => $address
+            "address" => $address,
+            "image" => $image
         ];
         setUserSession($updated_user_data);
         header("Location: /my_profile.php?message=1");

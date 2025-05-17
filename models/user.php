@@ -59,17 +59,18 @@
             return $this->db_conn->insert_id;
         }
 
-        public function updateUser($id, $first_name, $last_name, $email, $phone, $address) {
+        public function updateUser($id, $first_name, $last_name, $email, $phone, $address, $image) {
             $query = "UPDATE users 
                 SET first_name = ?,
                     last_name = ?,
                     email = ?,
                     phone = ?, 
-                    address = ? 
+                    address = ?,
+                    image = ?
                 WHERE id = ?;
             ";
-            $type = "sssssi";
-            $fields_array = [$first_name, $last_name, $email, $phone, $address, $id];
+            $type = "ssssssi";
+            $fields_array = [$first_name, $last_name, $email, $phone, $address, $image, $id];
             $this->executeQuery('updating a user', $query, $type, $fields_array);
             return $this->db_conn->insert_id;
         }

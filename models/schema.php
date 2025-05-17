@@ -23,7 +23,8 @@
                 role VARCHAR(10) NOT NULL,
                 password VARCHAR(255) NOT NULL, 
                 phone VARCHAR(20), 
-                address VARCHAR(100)
+                address VARCHAR(100),
+                image BLOB
             )";
             $this->executeCreationIfTableExistsQuery('users', $query);
         }
