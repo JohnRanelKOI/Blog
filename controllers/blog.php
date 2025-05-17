@@ -11,56 +11,80 @@
     switch($_SERVER["REQUEST_METHOD"]) {
         case "GET":
             if(array_key_exists("id", $_GET)) {
-                $blog_post_id = $_GET["id"];
-                $blog_post = $blog_posts_init->getPostById($blog_post_id);
-                echo json_encode($blog_post->fetch_assoc());
+                echo fetchBlogById($blog_posts_init);
             }
             if(array_key_exists("skip", $_GET) && array_key_exists("limit", $_GET)) {
-                $limit = $_GET["limit"];
-                $skip = $_GET["skip"];
-                $blog_post = $blog_posts_init->getLimitedPosts($limit, $skip);
-                $rows = [];
-                if ($blog_post->num_rows > 0) {
-                    while ($row = $blog_post->fetch_assoc()) {
-                        $rows[] = $row;
-                    }
-                }
-                echo json_encode($rows);
+                echo paginateBlog($blog_posts_init);
             }
             if(array_key_exists("count", $_GET)) {
-                $blog_post_count = $blog_posts_init->getCount();
-                $blog_count = $blog_post_count->fetch_assoc();
-                echo $blog_count["count"];
+                echo getBlogTotalCount($blog_posts_init);
             }
             break;
         case "POST":
             unauthorizedAccessRedirect();
-            $title = htmlspecialchars($_POST["title"] ?? '');
-            $slug = convertTitleToURL($_POST["title"] ?? '');
-            $short_description = htmlspecialchars($_POST["short_description"] ?? '');
-            $content = htmlspecialchars($_POST["content"] ?? '');
-            $category = htmlspecialchars($_POST["category"] ?? '');
-            $date = htmlspecialchars($_POST["date"] ?? '');
-            $file = $_FILES["post_image"];
-            $new_blog_post_id = $blog_posts_init->insertNewPost($_SESSION["user_id"], "blog", $title, $slug, $short_description, $content, $category, $date);
-            $post_image_init->insertNewImage($new_blog_post_id, $file, SITE_ROOT, SITE_URL);
-            echo $new_blog_post_id;
+            echo insertBlogPost($blog_posts_init, $post_image_init);
             break;
         case "PUT":
             unauthorizedAccessRedirect();
-            $input_data = file_get_contents("php://input");
-            $post_data = json_decode($input_data, true);
-            if(isset($post_data["post_image"])) {
-                $post_image_init->updateImage($post_data["post_image"], $post_data["image_url"], SITE_ROOT);
-            }
-            $blog_posts_init->updatePost($post_data["id"], $post_data["title"], convertTitleToURL($post_data["title"]), $post_data["short_description"], $post_data["content"], $post_data["category"], $post_data["date"]);
+            echo updateBlogPost($blog_posts_init, $post_image_init);
             break;
         case "DELETE":
             unauthorizedAccessRedirect();
-            $file_path = SITE_ROOT . "/uploads/" . basename($_GET["image_url"]);
-            $post_image_init->deleteImage($_GET["id"], $file_path);
-            $blog_posts_init->deletePost($_GET["id"]);
+            deleteBlogPost($blog_posts_init, $post_image_init);
             break;
+    }
+
+    function fetchBlogById($blog_posts_init) {
+        $blog_post_id = $_GET["id"];
+        $blog_post = $blog_posts_init->getPostById($blog_post_id);
+        return json_encode($blog_post->fetch_assoc());
+    }
+
+    function paginateBlog($blog_posts_init) {
+        $limit = $_GET["limit"];
+        $skip = $_GET["skip"];
+        $blog_post = $blog_posts_init->getLimitedPosts($limit, $skip);
+        $rows = [];
+        if ($blog_post->num_rows > 0) {
+            while ($row = $blog_post->fetch_assoc()) {
+                $rows[] = $row;
+            }
+        }
+        return json_encode($rows);
+    }
+
+    function getBlogTotalCount($blog_posts_init) {
+        $blog_post_count = $blog_posts_init->getCount();
+        $blog_count = $blog_post_count->fetch_assoc();
+        return $blog_count["count"];
+    }
+
+    function insertBlogPost($blog_posts_init, $post_image_init) {
+        $title = htmlspecialchars($_POST["title"] ?? '');
+        $slug = convertTitleToURL($_POST["title"] ?? '');
+        $short_description = htmlspecialchars($_POST["short_description"] ?? '');
+        $content = htmlspecialchars($_POST["content"] ?? '');
+        $category = htmlspecialchars($_POST["category"] ?? '');
+        $date = htmlspecialchars($_POST["date"] ?? '');
+        $file = $_FILES["post_image"];
+        $new_blog_post_id = $blog_posts_init->insertNewPost($_SESSION["user_id"], "blog", $title, $slug, $short_description, $content, $category, $date);
+        $post_image_init->insertNewImage($new_blog_post_id, $file, SITE_ROOT, SITE_URL);
+        return $new_blog_post_id;
+    }
+
+    function updateBlogPost($blog_posts_init, $post_image_init) {
+        $input_data = file_get_contents("php://input");
+        $post_data = json_decode($input_data, true);
+        if(isset($post_data["post_image"])) {
+            $post_image_init->updateImage($post_data["post_image"], $post_data["image_url"], SITE_ROOT);
+        }
+        $blog_posts_init->updatePost($post_data["id"], $post_data["title"], convertTitleToURL($post_data["title"]), $post_data["short_description"], $post_data["content"], $post_data["category"], $post_data["date"]);
+    }
+
+    function deleteBlogPost($blog_posts_init, $post_image_init) {
+        $file_path = SITE_ROOT . "/uploads/" . basename($_GET["image_url"]);
+        $post_image_init->deleteImage($_GET["id"], $file_path);
+        $blog_posts_init->deletePost($_GET["id"]);
     }
 
     function convertTitleToURL($str) { 

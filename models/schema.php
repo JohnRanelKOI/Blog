@@ -34,7 +34,7 @@
                 user_id INT UNSIGNED, 
                 type VARCHAR(20) NOT NULL,
                 title VARCHAR(255) NOT NULL UNIQUE,
-                slug_title VARCHAR(255) NOT NULL,
+                slug_title VARCHAR(255),
                 content TEXT,
                 short_description TEXT,
                 category VARCHAR(50) NOT NULL,
