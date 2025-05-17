@@ -74,7 +74,7 @@
             try {
                 $table_exists = $this->db_conn->query("SHOW TABLES LIKE '$table_name'");
                 if(mysqli_num_rows($table_exists) <= 0)
-                    $this->db_conn->query($user_table_query);
+                    $this->db_conn->query($db_query);
             } catch (Exception $e) {
                 throw new Exception("Database queries for '$table_name' table creation failed: " . $e->getMessage());
             }
