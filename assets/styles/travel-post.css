@@ -7,7 +7,7 @@ main > .travel-post {
 main > .travel-post > .container > article {
     display: flex;
     flex-wrap: unset;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 main > .travel-post > .container > article > .images {
@@ -23,7 +23,7 @@ main > .travel-post > .container > article > .stay-at-details {
 
 main > .travel-post > .container > article > .stay-at-details > h2 {
     font-family: "Oleo-Script";
-    font-size: 96px;
+    font-size: 66px;
     margin: 0;
 }
 
@@ -39,6 +39,7 @@ main > .travel-post > .container > article > .stay-at-details > h3 {
 }
 
 main > .travel-post > .container > article > .stay-at-details > ul {
+    list-style: none;
     position: relative;
     z-index: 1;
     background-color: #ffffff;
@@ -46,7 +47,7 @@ main > .travel-post > .container > article > .stay-at-details > ul {
     font-weight: 100;
     line-height: 30px;
     margin: -25px auto 0;
-    padding: 70px;
+    padding: 30px;
     width: auto;
     text-align: left;
 }
@@ -98,24 +99,124 @@ main > .travel-post > .container > article > .images > figure:nth-child(3) > img
     margin: 0;
 }
 
+main > .travel-post > .container > article > .stay-at-details > .comment-section {
+    margin-top: -20px;
+    background-color: #ffffff;
+    width: auto;
+    padding: 30px;
+    margin: -25px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment {
+    border: 1px solid #999999;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment > div > span, p, button {
+    text-align: left;
+    font-family: "Instrument-Sans";
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment > div > button {
+    border: 1px solid #000000;
+    margin-left: 5px;
+    float: left;
+    cursor: pointer;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment > div > .update-comment-btn {
+    background-color: #f7ffd7;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment > div > .delete-comment-btn {
+    background-color: #e8524a;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment > div > span {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment > div > span > span {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment > div > img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment-input {
+    width: 100%;
+    
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment-input > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment-input > h4 {
+    font-family: "Instrument-Sans";
+    text-align: left;
+}
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment-input > form > textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 10px 10px;
+    font-family: "Instrument-Sans";
+}
+
+main > .travel-post > .container > article > .stay-at-details > .comment-section > .comment-input > form > button {
+    border: 1px solid #000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.error-message {
+    font-family: 'Inter';
+    font-size: 12px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: #e8524a;
+    color: #FFFFFF;
+}
+
+.comment-error-container {
+    margin-bottom: 5px;
+}
+
 /* 40rem */
 @media screen and (min-width: 640px) {
-    main > .travel-post {
-        height: 490px;
-    }
-    
     main > .travel-post > .container > article {
         flex-wrap: wrap;
         flex-direction: unset;
     }
     
     main > .travel-post > .container > article > .images {
-        width: 50%;
+        width: 40%;
         box-sizing: border-box;
     }
     
     main > .travel-post > .container > article > .stay-at-details {
-        width: 50%;
+        width: 60%;
         box-sizing: border-box;
     }
     
@@ -125,7 +226,7 @@ main > .travel-post > .container > article > .images > figure:nth-child(3) > img
     
     main > .travel-post > .container > article > .stay-at-details > ul {
         padding: 50px;
-        width: 60%;
+        width: auto;
     }
     
     main > .travel-post > .container > article > .images > figure {
@@ -153,10 +254,6 @@ main > .travel-post > .container > article > .images > figure:nth-child(3) > img
 
 /* 48rem */
 @media screen and (min-width: 768px) {
-    main > .travel-post {
-        height: 390px;
-    }
-    
     main > .travel-post > .container > article > .images > figure:nth-child(1) > img {
         margin: 20px 0 0;
     }
@@ -172,24 +269,135 @@ main > .travel-post > .container > article > .images > figure:nth-child(3) > img
 
 /* 64 rem */
 @media screen and (min-width: 1024px) {
-    main > .travel-post {
-        height: 475px;
-    }
-    
     main > .travel-post > .container > article > .stay-at-details > h2 {
         font-size: 96px;
     }
     
     main > .travel-post > .container > article > .stay-at-details > ul {
         padding: 70px;
-        width: 315px;
+        width: 450px;
+        margin-bottom: 50px;
     }
     
     main > .travel-post > .container > article > .images > figure > img {
-        width: 250px;
+        width: 320px;
     }
     
     main > .travel-post > .container > article > .images > figure:nth-child(3) > img {
         margin: 200px 0 0 200px;
     }
+
+    main > .travel-post > .container > article > .stay-at-details > .comment-section {
+        width: 450px;
+    }
+}
+
+/* 80 rem */
+@media screen and (min-width: 1280px) {
+    main > .travel-post > .container > article > .stay-at-details > ul {
+        width: 550px;
+    }
+
+    main > .travel-post > .container > article > .stay-at-details > .comment-section {
+        width: 550px;
+        padding: 70px;
+        gap: 10px;
+    }
+}
+
+.form-modal {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 999;
+}
+
+.form-modal > .container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.form-modal > .container > .modal-inner {
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    align-self: center;
+    animation-name: animateFade;
+    animation-duration: 1s;
+    font-family: "Instrument-Sans";
+}
+
+.form-modal > .container > .modal-inner > h3, p {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.form-modal > .container > .modal-inner > button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    align-self: end;
+    top: 20px;
+}
+
+.form-modal > .container > .modal-inner > button > img {
+    height: 20px;
+}
+
+.form-modal > .container > .modal-inner > div > .confirm {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #a0d9a2;
+    cursor: pointer;
+    float: left;
+}
+
+.form-modal > .container > .modal-inner > .update_comment > div {
+    text-align: left;
+}
+
+.form-modal > .container > .modal-inner > div > .reject {
+    border: 1px solid #000000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    background-color: #e8524a;
+    cursor: pointer;
+    float: left;
+    margin-left: 10px;
+}
+
+.form-modal > .container > .modal-inner > div > label {
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+}
+
+.form-modal > .container > .modal-inner > input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    font-family: "Instrument-Sans";
+}
+
+.form-modal > .container > .modal-inner > .update_comment > button {
+    border: 1px solid #000;
+    padding: 5px 20px;
+    font-family: "Instrument-Sans";
+    font-size: 16px;
+    float: right;
+    background-color: #a0d9a2;
+    cursor: pointer;
 }
